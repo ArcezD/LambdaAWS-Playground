@@ -1,0 +1,24 @@
+{
+  "name": "azd-playground",
+  "version": "0.0.1",
+  "description": "Test of AWS Services",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "ArcezD",
+  "license": "ISC",
+  "devDependencies": {
+    "lambda-tester": "2.7.0",
+    "chai": "3.5.0",
+    "mocha": "3.2.0"
+  },
+  "dependencies": {
+    "aws-sdk": "2.16.0",
+    "bluebird": "3.4.7",
+    "uuid": "3.0.1"
+  }
+}

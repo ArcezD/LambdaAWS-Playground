@@ -27,14 +27,26 @@ var index = require('../index');
 });*/
 
 describe('devApi', function() {
-    it('test success', function() {
+    it('Success POST', function() {
+        this.timeout(3000);
         return LambdaTester(index.devApi)
             .event({
+                httpMethod: 'POST',
                 name: 'Fred'
             })
             .expectSucceed(function(result) {
                 console.log('Result: ', result);
                 expect(result.statusCode).to.equal(200)
+            });
+    });
+    it('Error HTTP 405', function() {
+        return LambdaTester(index.devApi)
+            .event({
+                httpMethod: 'GET'
+            })
+            .expectSucceed(function(result) {
+                console.log('Result: ', result);
+                expect(result.statusCode).to.equal(405)
             });
     });
 });
